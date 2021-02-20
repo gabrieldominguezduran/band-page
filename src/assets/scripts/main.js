@@ -10,7 +10,8 @@
  * Write any other JavaScript below
  */
 
-+( function() {
++(function () {
   const university = "UOC";
-  console.log(`Hello, ${university}!`);
-} )();
+  const name = "Gabriel";
+  console.log(`Hello, ${university}! this is ${name}`);
+})();
