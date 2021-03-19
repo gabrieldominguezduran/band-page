@@ -1,4 +1,18 @@
 {
   "extends": "stylelint-config-recommended-scss",
-  "rules": {}
+    "plugins": [
+    "stylelint-selector-bem-pattern",
+    "stylelint-group-selectors"
+  ],
+  "rules": {
+    "plugin/stylelint-group-selectors": true,
+    "plugin/selector-bem-pattern": {
+      "componentName": "[A-Z]+",
+      "componentSelectors": {
+        "initial": "^\\.{componentName}(?:-[a-z]+)?$",
+        "combined": "^\\.combined-{componentName}-[a-z]+$"
+        },
+        "utilitySelectors": "^\\.util-[a-z]+$"
+    },
+  }
 }

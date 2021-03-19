@@ -1,7 +1,80 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
 body {
   margin: 0;
-  padding: 30px;
+  padding: 0;
+  width: 100vw;
   font-family: $font-family-sans-serif;
   background-color: $bg-color;
   color: $secondary-color;
+}
+
+
+.header-nav{
+  @include flex;
+  background-color: $secondary-bg-color;
+  width: 100vw;
+  margin: 0 auto;
+  
+  a{
+  
+    text-decoration: none;
+    color: $secondary-color;
+  
+    &:hover{
+      color: $primary-color;
+    }
+  }
+
+  ul{
+    @include flex;
+    flex-direction: column; 
+    justify-content: center;
+  }
+  @media (min-width: 650px){
+    ul{
+      flex-direction: row; 
+    }
+    
+   }        
+  li{
+    list-style: none;
+    margin: 1rem;
+  }
+
+}
+
+.header{
+ 
+  img{
+    width: 30%;
+    border-radius: 50%;
+  }
+
+  h1{
+    font-size: $font-size-lg
+  }
+}
+
+.card{
+  @include card;
+  @include flex;
+  @media (min-width: 650px){
+   @include grid
+  }
+}
+
+.footer{
+  background-color: $secondary-bg-color;
 }
