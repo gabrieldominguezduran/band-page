@@ -6,10 +6,11 @@ $font-family-serif: "Georgia", "Times New Roman", serif;
 $primary-color: #f4f4f4;
 $secondary-color: #111111;
 $tertiary-color: #F95050;
-$bg-color: color.scale($primary-color, $lightness: 80%);
-$secondary-bg-color: color.scale($tertiary-color, $lightness: 10%);
-$card-bg-color: color.scale($secondary-color, $lightness: 90%);
+
+@function bg-color($color, $lightness){
+  @return  color.scale($color, $lightness: $lightness);
+}
 
 $font-size-lg: 2rem;
-$font-size-md: 1.2rem;
+$font-size-md: 1.150rem;
 $font-size-sm: 0.8rem;

@@ -1,7 +1,7 @@
 html {
   box-sizing: border-box;
-  margin: 0;
-
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 *,
@@ -10,71 +10,91 @@ html {
   box-sizing: inherit;
 }
 
-
 body {
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0;
   width: 100vw;
   font-family: $font-family-sans-serif;
-  background-color: $bg-color;
+  background-color: bg-color($primary-color, 80%);
   color: $secondary-color;
 }
 
+.up-link {
+  text-align: right;
+  i {
+    color: $tertiary-color;
+  }
+}
 
-.header-nav{
+.header {
   @include flex;
-  background-color: $secondary-bg-color;
-  width: 100vw;
-  margin: 0 auto;
-  
-  a{
-  
-    text-decoration: none;
-    color: $secondary-color;
-  
-    &:hover{
-      color: $primary-color;
+  margin: 0 1rem;
+
+  &__bottom-link {
+    text-align: center;
+    margin-bottom: 10rem;
+    i {
+      color: $tertiary-color;
     }
   }
 
-  ul{
-    @include flex;
-    flex-direction: column; 
-    justify-content: center;
+  &__nav {
+    display: none;
   }
-  @media (min-width: 650px){
-    ul{
-      flex-direction: row; 
+
+  @media (min-width: 650px) {
+    &__nav {
+      @include flex;
+      background-color: bg-color($tertiary-color, 10%);
+      width: 100vw;
+      margin: 0 auto;
     }
-    
-   }        
-  li{
-    list-style: none;
-    margin: 1rem;
+
+    &__bottom-link {
+      display: none;
+    }
   }
 
-}
-
-.header{
- 
-  img{
-    width: 30%;
-    border-radius: 50%;
+  &__img {
+    @include card;
+    width: 80%;
+    margin: 0.5rem auto;
+    background-color: bg-color($tertiary-color, 10%);
   }
 
-  h1{
-    font-size: $font-size-lg
+  &__title {
+    margin: 1.8rem 2rem;
+    font-size: 3rem;
   }
 }
-
-.card{
+.card {
   @include card;
   @include flex;
-  @media (min-width: 650px){
-   @include grid
+
+  &__title {
+    font-size: $font-size-lg;
+  }
+
+  &__text {
+    font-size: $font-size-md;
+    word-spacing: 0.3rem;
+    line-height: 140%;
+  }
+  @media (min-width: 650px) {
+    @include grid;
   }
 }
 
-.footer{
-  background-color: $secondary-bg-color;
+.footer {
+  @include flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 3rem;
+  background-color: bg-color($tertiary-color, 10%);
+
+  &__links {
+    color: $secondary-color;
+    align-self: center;
+  }
 }
