@@ -9,12 +9,17 @@
 
 @import "variables";
 
-
 /**
  * Import mixins
  */
 
 @import "mixins";
+
+/**
+ * Import functions
+ */
+
+@import "functions";
 
 /**
  * Import npm dependencies

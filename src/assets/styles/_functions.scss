@@ -1,0 +1,5 @@
+@use "sass:color";
+
+@function bg-color($color, $lightness) {
+  @return color.scale($color, $lightness: $lightness);
+}
