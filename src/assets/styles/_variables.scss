@@ -5,6 +5,11 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   "Segoe UI Symbol";
 $font-family-serif: "Georgia", "Times New Roman", serif;
 
+$theme-colors: (
+  "primary": #232430,
+  "red": #900,
+);
+
 $primary-color: #f4f4f4;
 $secondary-color: #111111;
 $tertiary-color: #f95050;

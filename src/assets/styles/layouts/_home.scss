@@ -20,3 +20,17 @@ body {
   background-color: bg-color($primary-color, 80%);
   color: $secondary-color;
 }
+
+/* HERO */
+.hero {
+  display: flex;
+  flex-direction: column;
+  color: #2c2a2a;
+}
+
+.hero-img {
+  z-index: -100;
+  width: 100%;
+  margin-top: -25%;
+  opacity: 0.5;
+}
