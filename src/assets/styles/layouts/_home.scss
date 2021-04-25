@@ -21,16 +21,156 @@ body {
   color: $secondary-color;
 }
 
-/* HERO */
-.hero {
-  display: flex;
-  flex-direction: column;
-  color: #2c2a2a;
+.brand-font {
+  font-family: $brand-family-font;
+  color: rgb(253, 249, 16);
+  @include text-shadow;
+  font-size: 1.5rem;
 }
 
-.hero-img {
+.nav-item {
+  font-family: $brand-family-font;
+  font-size: 1.1rem;
+}
+
+.active {
+  border-bottom: 5px solid rgb(253, 249, 16);
+}
+
+/* HERO */
+.hero {
+  @include flex;
+  flex-grow: 1;
+  @media (min-width: 768px) {
+    @include grid;
+  }
+}
+
+.hero__img {
   z-index: -100;
-  width: 100%;
   margin-top: -25%;
+  width: 100%;
   opacity: 0.5;
+  margin-top: -65%;
+  @media (min-width: 768px) {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    margin-top: -25%;
+  }
+}
+
+.title {
+  @include flex;
+  font-size: 3rem;
+  text-align: center;
+  @media (min-width: 768px) {
+    @supports (display: grid) {
+      width: 100%;
+      @include grid;
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+      font-size: 6rem;
+      @media (min-width: 1024px) {
+        font-size: 9rem;
+      }
+
+      &__one {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        justify-self: end;
+        align-self: end;
+      }
+
+      &__two {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+        justify-self: center;
+        align-self: center;
+      }
+
+      &__three {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        justify-self: start;
+        align-self: start;
+      }
+    }
+  }
+}
+
+@supports not (display: grid) {
+  /* HERO */
+  .hero {
+    @include flex;
+  }
+
+  .hero__img {
+    z-index: -100;
+    margin-top: -30%;
+    width: 100%;
+    opacity: 0.5;
+  }
+
+  .title {
+    position: absolute;
+    color: rgb(20, 11, 11);
+    font-size: 5rem;
+  }
+
+  .title__one {
+    position: relative;
+    top: 0.625rem;
+    left: 15rem;
+  }
+
+  .title__two {
+    position: relative;
+    top: 4.375rem;
+    left: 17.5rem;
+  }
+
+  .title__three {
+    position: relative;
+    top: 9.375rem;
+    left: 17rem;
+  }
+}
+
+.footer {
+  margin-left: 2.5rem;
+  margin-top: 2rem;
+
+  @media (min-width: 768px) {
+    .nav-bottom {
+      @include flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .navbar-nav {
+      @include flex;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .nav-bottom {
+      width: 100%;
+      @include flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+    }
+  }
+}
+
+.nav-bottom {
+  justify-content: center;
+}
+
+.social-links {
+  @include flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 1rem;
+  margin-right: 2rem;
 }
