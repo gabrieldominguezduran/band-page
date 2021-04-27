@@ -16,25 +16,45 @@ body {
   margin: 0 auto;
   padding: 0;
   width: 100vw;
-  font-family: $font-family-sans-serif;
+  font-family: $brand-family-font;
   background-color: bg-color($primary-color, 80%);
   color: $secondary-color;
 }
 
+.nav__header {
+  position: relative;
+  width: 100%;
+  @include flex;
+
+  &:before {
+    content: "";
+    background-image: url("../images/photo-band4.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+  }
+}
+
 .brand-font {
-  font-family: $brand-family-font;
-  color: rgb(253, 249, 16);
+  color: $band-color;
   @include text-shadow;
   font-size: 1.5rem;
 }
 
+.navbar-toggler {
+  background-color: $band-color;
+}
+
 .nav-item {
-  font-family: $brand-family-font;
   font-size: 1.1rem;
 }
 
 .active {
-  border-bottom: 5px solid rgb(253, 249, 16);
+  border-bottom: 5px solid $band-color;
 }
 
 /* HERO */
@@ -49,12 +69,13 @@ body {
 .hero__img {
   z-index: -100;
   width: 100%;
-  opacity: 0.5;
   margin-top: -65%;
+  opacity: 0.7;
   @media (min-width: 768px) {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
     margin-top: -25%;
+    opacity: 1;
   }
 }
 
@@ -107,7 +128,6 @@ body {
     z-index: -100;
     margin-top: -30%;
     width: 100%;
-    opacity: 0.5;
   }
 
   .title {

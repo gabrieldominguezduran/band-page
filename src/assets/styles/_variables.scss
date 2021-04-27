@@ -7,13 +7,13 @@ $font-family-serif: "Georgia", "Times New Roman", serif;
 
 $brand-family-font: "Alfa Slab One", cursive;
 
-$theme-colors: (
-  "primary": #232430,
-  "red": #900,
-);
-
 $primary-color: #f4f4f4;
 $secondary-color: #111111;
+$band-color: rgb(253, 249, 16);
+
+$theme-colors: (
+  "band-color": $band-color,
+);
 
 @function bg-color($color, $lightness) {
   @return color.scale($color, $lightness: $lightness);
