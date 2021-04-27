@@ -17,6 +17,7 @@ body {
   padding: 0;
   width: 100vw;
   font-family: $brand-family-font;
+  line-height: 1.6;
   background-color: bg-color($primary-color, 80%);
   color: $secondary-color;
 }

@@ -1,0 +1,29 @@
+.form__title {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  font-size: 2rem;
+  text-align: center;
+  @include text-shadow;
+  color: $band-color;
+  @media (min-width: 768px) {
+    font-size: 5rem;
+  }
+}
+
+.wink {
+  margin-left: 1rem;
+  background-color: $band-color;
+  border-radius: 10px;
+}
+
+.form {
+  width: 70%;
+  margin: auto;
+  @media (min-width: 768px) {
+    margin-bottom: 5rem;
+  }
+}
+
+.footer {
+  margin-bottom: 0;
+}

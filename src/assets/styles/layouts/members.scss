@@ -1,24 +1,26 @@
 .band-title {
   margin: 2rem;
+  font-size: 5rem;
   text-align: center;
   @include text-shadow;
   color: $band-color;
 }
 
-.card {
-  margin: 2rem auto;
+.band-section {
+  @include flex;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
-@media (min-width: 768px) {
-  .band-section {
-    @supports (display: grid) {
-      @include grid;
-    }
-    @supports not (display: grid) {
-      .band-section {
-        @include flex;
-        flex-direction: row;
-      }
+.card {
+  width: 70%;
+  margin: 1rem auto;
+  @media (min-width: 768px) {
+    width: 45%;
+    .card-text {
+      padding: 2rem;
     }
   }
 }
