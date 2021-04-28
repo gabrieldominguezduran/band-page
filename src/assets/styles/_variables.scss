@@ -15,6 +15,9 @@ $theme-colors: (
   "band-color": $band-color,
 );
 
+$card-border-radius: 10px;
+$card-border-color: rgba($secondary-color, 0.5);
+
 @function bg-color($color, $lightness) {
   @return color.scale($color, $lightness: $lightness);
 }

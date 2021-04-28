@@ -1,4 +1,4 @@
-.band-title {
+.band__title {
   margin: 2rem;
   font-size: 5rem;
   text-align: center;
@@ -6,7 +6,11 @@
   color: $band-color;
 }
 
-.band-section {
+.band__heading {
+  text-align: center;
+}
+
+.band__section {
   @include flex;
   @media (min-width: 768px) {
     flex-direction: row;
